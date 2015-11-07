@@ -1,12 +1,8 @@
 <?php 
 require __DIR__.'/../vendor/autoload.php';
 
-use \WebGobernacion\FakeDatabase;
-use \WebGobernacion\Http\Controllers\HomeController;
-use \Illuminate\Http\Request;
+$app = new \WebGobernacion\Application(
+    new \Illuminate\Container\Container()
+);
 
-$request= Request::capture();
-
-$controller = new HomeController(new FakeDatabase);
-
-$controller->index($request);
+$app->run();

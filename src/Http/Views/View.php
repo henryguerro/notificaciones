@@ -53,7 +53,11 @@ class View
     if (file_exists($path)) {
 
       extract($params);
-      return include $path;
+
+      ob_start();
+      require $path;
+
+      return ob_get_clean();
 
     }else{
 

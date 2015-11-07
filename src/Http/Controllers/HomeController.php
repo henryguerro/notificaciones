@@ -32,9 +32,17 @@ class HomeController
       'firstContrato' => $first
     ]);
 
-   $response = $view->render();
-
-   //$response->send();
-
+   return $view->render();
   }
+
+   public function show($id)
+    {
+        $posts = $this->db->posts();
+
+        $view = new View('post_details', [
+            'post' => $posts->get($id)
+        ]);
+
+        return $view->render();
+    }
 }
