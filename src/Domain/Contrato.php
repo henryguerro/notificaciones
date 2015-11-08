@@ -1,5 +1,5 @@
 <?php
-namespace WebGobernacion;
+namespace WebGobernacion\Domain;
 
 /**
 * 

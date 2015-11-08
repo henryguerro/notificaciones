@@ -2,9 +2,7 @@
 namespace WebGobernacion\Http\Controllers;
 
 use Illuminate\Http\Request;
-use WebGobernacion\Empresa;
-use WebGobernacion\Contrato;
-use WebGobernacion\FakeDatabase;
+use WebGobernacion\Infrastructure\FakeDatabase;
 use WebGobernacion\Http\Views\View;
 
 class HomeController

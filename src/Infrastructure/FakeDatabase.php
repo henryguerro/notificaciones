@@ -1,7 +1,9 @@
 <?php 
-namespace WebGobernacion;
+namespace WebGobernacion\Infrastructure;
 
 use Illuminate\Support\Collection; 
+use WebGobernacion\Domain\Empresa; 
+use WebGobernacion\Domain\Contrato; 
 
 /**
 * 

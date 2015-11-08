@@ -2,9 +2,9 @@
 /**
 * 
 */
-use \WebGobernacion\Responsabilidad;
-use \WebGobernacion\Contrato;
-use \WebGobernacion\Empresa;
+use \WebGobernacion\Domain\Responsabilidad;
+use \WebGobernacion\Domain\Contrato;
+use \WebGobernacion\Domain\Empresa;
 
 class ResponsabilidadTest extends PHPUnit_Framework_TestCase
 {
