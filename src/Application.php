@@ -27,7 +27,7 @@ class Application
         );
 
         $router->get('/', HomeController::class . '@index');
-//        $router->get('/responsabilidad/{id}', HomeController::class . '@show');
+        $router->get('/responsabilidad/{id}', HomeController::class . '@show');
 
         $response = $router->dispatch(Request::capture());
 

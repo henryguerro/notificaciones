@@ -1,32 +1,31 @@
 <?php 
 namespace WebGobernacion\Http\Controllers;
 
-use Illuminate\Http\Request;
-use WebGobernacion\Infrastructure\FakeDatabase;
+use WebGobernacion\Domain\Notificador;
 use WebGobernacion\Http\Views\View;
 
 class HomeController
 {
 
-    /**
-   * @type array
+  /**
+   * @type Notificador
    */
-  private $db;
+  private $notificador;
 
-  public function __construct(FakeDatabase $db) {
+  public function __construct(Notificador $notificador) {
 
-    $this->db = $db;
+    $this->notificador = $notificador;
 
   }
 
-  public function index(Request $request)
+  public function index()
   {
 
-    $contratos = $this->db->contratos();
-    $first = $contratos->first();
+    $responsabilidades = $this->notificador->listResponsabilidades();
+    $first = $responsabilidades->first();
 
     $view = new View('home',[
-      'contratos' => $contratos, 
+      'contratos' => $responsabilidades, 
       'firstContrato' => $first
     ]);
 
@@ -35,12 +34,12 @@ class HomeController
 
    public function show($id)
     {
-        $posts = $this->db->posts();
+      $posts = $this->db->posts();
 
-        $view = new View('post_details', [
-            'post' => $posts->get($id)
-        ]);
+      $view = new View('post_details', [
+          'post' => $posts->get($id)
+      ]);
 
-        return $view->render();
+      return $view->render();
     }
 }
