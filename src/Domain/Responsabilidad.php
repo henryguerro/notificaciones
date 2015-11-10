@@ -22,14 +22,19 @@ class Responsabilidad
 	 * @type object
 	 */
 	private $contrato;
-	/**
-	 * @type int
-	 */
-	static private $_ultimoId = 0;
 
-	public function __construct(Contrato $contrato,$titulo,$fecha)
+
+	public function __construct($contratoID,$titulo,$fecha,$id=null)
 	{
-		self::$_ultimoId += 1;
+		$this->contrato = $contratoID;
+		$this->titulo 	= $titulo;
+		$this->fecha 		= $fecha;
+		$this->id 			= $id;
+	}
+
+	public static function create(Contrato $contrato,$titulo,$fecha)
+	{
+		$responsabilidad = new Responsabilidad($contrato,$titulo,$fecha);
 		$this->id = self::$_ultimoId;
 		$this->titulo 	= $titulo;
 		$this->fecha 		= $fecha;
