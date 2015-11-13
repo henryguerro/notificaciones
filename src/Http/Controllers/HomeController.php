@@ -25,8 +25,8 @@ class HomeController
     $first = $responsabilidades->first();
 
     $view = new View('home',[
-      'contratos' => $responsabilidades, 
-      'firstContrato' => $first
+      'responsabilidades' => $responsabilidades, 
+      'firstResponsabilidad' => $first
     ]);
 
    return $view->render();
@@ -34,10 +34,10 @@ class HomeController
 
    public function show($id)
     {
-      $posts = $this->db->posts();
+      $responsabilidad = $this->notificador->findById($id);
 
-      $view = new View('post_details', [
-          'post' => $posts->get($id)
+      $view = new View('home', [
+          'responsabilidades' => $responsabilidad
       ]);
 
       return $view->render();

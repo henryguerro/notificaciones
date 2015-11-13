@@ -35,13 +35,13 @@ class ContratoTest extends PHPUnit_Framework_TestCase
 			999, 
 			"Contrato Probadero"
 		);
-		$name = $contrato->getNombre();
+		$name = $contrato->getTitulo();
 		$this->assertEquals('Contrato Probadero', $name);
 	}
 		/**
 	 * @test
 	 */
-		public function it_return_prvider()
+		public function it_return_provider()
 	{
 		$empresa = new Empresa("Empresa Probadora");
 

@@ -1,7 +1,7 @@
 <?php
 namespace WebGobernacion\Domain;
 
-use WebGobernacion\Infrastructure\FakeDatabase;
+use WebGobernacion\Infrastructure\ResponsabilidadRepository;
 
 /**
 * Representa un patrón de Servicio encargado
@@ -10,15 +10,26 @@ use WebGobernacion\Infrastructure\FakeDatabase;
 */
 class Notificador
 {
-	private $db;
+  /**
+   * @type ResponsabilidadRepository
+   */
+	private $responsabilidades;
 
-	public function __construct(FakeDatabase $db)
+	public function __construct(ResponsabilidadRepository $responsabilidades)
 	{
-		$this->db = $db;
+		$this->responsabilidades = $responsabilidades;
 	}
 
+  /**
+   * @return \Illuminate\Support\Collection
+   */
 	public function listResponsabilidades()
 	{
-		return $this->db->contratos();
+		return $this->responsabilidades->all();
 	}
+
+  public function findById($id)
+  {
+    return $this->responsabilidades->find($id);
+  }
 }

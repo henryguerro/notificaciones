@@ -1,11 +1,16 @@
 <?php
 namespace WebGobernacion\Domain;
 
+use \WebGobernacion\Infrastructure\EmpresaRepository;
 /**
 * 
 */
 class Contrato
 {
+	/**
+	 * @type int
+	 */
+	private $id;
 	/**
 	 * @type object
 	 */
@@ -13,23 +18,24 @@ class Contrato
 	/**
 	 * @type int
 	 */
-	private $numero;
+	private $fecha;
 	/**
 	 * @type string
 	 */
-	private $nombre;
+	private $titulo;
 	
 
-	public function __construct(Empresa $empresa,$numero,$nombre)
+	public function __construct($empresaID,$fecha,$titulo,$id=null)
 	{
-		$this->empresa 		= $empresa;
-		$this->numero 		= $numero;
-		$this->nombre 		= $nombre;
+		$this->setEmpresa($empresaID);
+		$this->numero 		= $fecha;
+		$this->titulo 		= $titulo;
+		$this->id 				= $id;
 	}
 
-	public function getNombre()
+	public function getTitulo()
 	{
-		return $this->nombre;
+		return $this->titulo;
 	}
 
 	public function getEmpresa()
@@ -37,5 +43,13 @@ class Contrato
 		return $this->empresa->getNombre();
 	}
 
-
+	private function setEmpresa($empresa)
+	{
+		if ($empresa instanceof Empresa) {
+			$this->empresa = $empresa;
+		}else{
+			$repository = new EmpresaRepository();
+			$this->empresa = $repository->find($empresa);
+		}
+	}
 }

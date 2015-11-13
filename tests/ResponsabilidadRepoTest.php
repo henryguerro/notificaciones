@@ -12,14 +12,12 @@ class ResponsabilidadRepoTest extends PHPUnit_Framework_TestCase
   {
     $responsabilidades  = new ResponsabilidadRepository();
 
-    $this->assertInstanceOf(ResponsabilidadRepository::class,$responsabilidades);
-
     $results = $responsabilidades->all();
 
-    $this->assertInstanceOf(\Illuminate\Support\Collection::class,$results);
+    $this->assertInstanceOf(Collection::class,$results);
 
-    foreach ($results as $result) {
-      $this->assertInstanceOf(Responsabilidad::Class, $result);
+    foreach ($results as $responsabilidad) {
+      $this->assertInstanceOf(Responsabilidad::Class, $responsabilidad);
     }
 
   }
@@ -47,7 +45,7 @@ class ResponsabilidadRepoTest extends PHPUnit_Framework_TestCase
   {
     $responsabilidades = new ResponsabilidadRepository();
 
-    $this->setExpectedException(\OutOfBoundsException::Class);
+    $this->setExpectedException(\WebGobernacion\Domain\EntityNotFound::Class);
 
     $responsabilidades->find(10000);
 

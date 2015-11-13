@@ -1,6 +1,7 @@
 <?php
 namespace WebGobernacion\Domain;
 
+use \WebGobernacion\Infrastructure\ContratoRepository;
 /**
 * 
 */
@@ -26,7 +27,7 @@ class Responsabilidad
 
 	public function __construct($contratoID,$titulo,$fecha,$id=null)
 	{
-		$this->contrato = $contratoID;
+		$this->setContrato($contratoID);
 		$this->titulo 	= $titulo;
 		$this->fecha 		= $fecha;
 		$this->id 			= $id;
@@ -62,6 +63,27 @@ class Responsabilidad
 	 */
 	public function getContrato()
 	{
-		return $this->contrato->getNombre();
+		return $this->contrato->getTitulo();
+	}
+
+	/**
+	 * @return string 
+	 */
+	public function getEmpresa()
+	{
+		return $this->contrato->getEmpresa();
+	}
+
+	/**
+	 * @return void 
+	 */
+	private function setContrato($contrato)
+	{
+		if ($contrato instanceof Contrato) {
+			$this->contrato = $contrato;
+		}else{
+			$repository = new ContratoRepository();
+			$this->contrato = $repository->find($contrato);
+		}
 	}
 }

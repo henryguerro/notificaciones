@@ -34,6 +34,7 @@ class View
     return $response;
   }
 
+
   private function loadTemplate()
   {
     $path = dirname(dirname(dirname(__DIR__))).
