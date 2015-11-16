@@ -2,8 +2,8 @@
 /**
 * 
 */
-use \WebGobernacion\Domain\Contrato;
-use \WebGobernacion\Domain\Empresa;
+use \Notificaciones\Domain\Contrato;
+use \Notificaciones\Domain\Empresa;
 
 class ContratoTest extends PHPUnit_Framework_TestCase
 {

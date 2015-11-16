@@ -1,12 +1,12 @@
 <?php
 
-namespace WebGobernacion;
+namespace Notificaciones;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
-use \WebGobernacion\Http\Controllers\HomeController;
+use \Notificaciones\Http\Controllers\HomeController;
 /**
 * 
 */

@@ -1,6 +1,6 @@
 <?php 
-use \WebGobernacion\Infrastructure\BaseRepository;
-use \WebGobernacion\Infrastructure\ResponsabilidadRepository;
+use \Notificaciones\Infrastructure\BaseRepository;
+use \Notificaciones\Infrastructure\ResponsabilidadRepository;
 
 class BaseRepositoryTest extends PHPUnit_Framework_TestCase
 {

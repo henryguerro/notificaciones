@@ -2,7 +2,7 @@
 /**
 * 
 */
-use \WebGobernacion\Http\Views\View;
+use \Notificaciones\Http\Views\View;
 
 class ViewTest extends PHPUnit_Framework_TestCase
 {

@@ -1,5 +1,5 @@
 <?php 
-namespace WebGobernacion\Http\Views;
+namespace Notificaciones\Http\Views;
 use \Illuminate\Http\Response;
 
 /**

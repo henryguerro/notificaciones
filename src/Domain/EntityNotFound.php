@@ -1,5 +1,5 @@
 <?php
-namespace WebGobernacion\Domain;
+namespace Notificaciones\Domain;
 /**
 * 
 */

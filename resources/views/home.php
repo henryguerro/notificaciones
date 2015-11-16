@@ -14,7 +14,7 @@
     <th class="tg-amwm">Contrato</th>
     <th class="tg-amwm">Empresa</th>
   </tr>
-  <?php /** @type \WebGobernacion\Contrato[] $contratos */
+  <?php /** @type \Notificaciones\Contrato[] $contratos */
   foreach ($responsabilidades as $responsabilidad):?>
   <tr>
     <td class="tg-yw4l"><?= $responsabilidad->getFecha() ?></td>

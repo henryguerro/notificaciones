@@ -1,6 +1,6 @@
 <?php 
-use \WebGobernacion\Infrastructure\EmpresaRepository;
-use \WebGobernacion\Domain\Empresa;
+use \Notificaciones\Infrastructure\EmpresaRepository;
+use \Notificaciones\Domain\Empresa;
 use \Illuminate\Support\Collection; 
 
 class RepositoryEmpresaTest extends PHPUnit_Framework_TestCase
@@ -10,9 +10,9 @@ class RepositoryEmpresaTest extends PHPUnit_Framework_TestCase
    */
   function it_construct_repository()
   {
-    $empresaRepository  = new EmpresaRepository();
+        $empresaRepository  = new EmpresaRepository();
 
-    $this->assertInstanceOf(EmpresaRepository::class,$empresaRepository);
+        $this->assertInstanceOf(EmpresaRepository::class,$empresaRepository);
 
 
   }
@@ -22,14 +22,26 @@ class RepositoryEmpresaTest extends PHPUnit_Framework_TestCase
    */
   function find_a_empresa_by_id()
   {
-    $empresas = new EmpresaRepository();
+      $empresas = new EmpresaRepository();
 
-    $empresa = $empresas->find("J-29469419-5");
+      $empresa = $empresas->find("J-29469419-5");
 
-    $this->assertInstanceOf(
-      Empresa::Class, 
-      $empresa
-    );
+      $this->assertInstanceOf(
+          Empresa::Class,
+          $empresa
+      );
+  }
+
+    /**
+   * @test
+   */
+  function add_empresa()
+  {
+        $empresa = new Empresa("EmpresaPruebaAdd","J-11111111-1");
+
+        $repository = new EmpresaRepository();
+
+        $repository->add($empresa);
 
   }
 

@@ -1,5 +1,5 @@
 <?php
-namespace WebGobernacion\Domain;
+namespace Notificaciones\Domain;
 
 /**
 * 
@@ -27,6 +27,11 @@ class Empresa
 	public function getNombre()
 	{
 		return $this->nombre;
+	}
+
+	public function getRif()
+	{
+		return $this->id;
 	}
 
 }

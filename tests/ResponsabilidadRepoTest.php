@@ -1,6 +1,6 @@
 <?php 
-use \WebGobernacion\Infrastructure\ResponsabilidadRepository;
-use \WebGobernacion\Domain\Responsabilidad;
+use \Notificaciones\Infrastructure\ResponsabilidadRepository;
+use \Notificaciones\Domain\Responsabilidad;
 use \Illuminate\Support\Collection; 
 
 class ResponsabilidadRepoTest extends PHPUnit_Framework_TestCase
@@ -45,7 +45,7 @@ class ResponsabilidadRepoTest extends PHPUnit_Framework_TestCase
   {
     $responsabilidades = new ResponsabilidadRepository();
 
-    $this->setExpectedException(\WebGobernacion\Domain\EntityNotFound::Class);
+    $this->setExpectedException(\Notificaciones\Domain\EntityNotFound::Class);
 
     $responsabilidades->find(10000);
 

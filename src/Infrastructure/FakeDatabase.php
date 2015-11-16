@@ -1,9 +1,9 @@
 <?php 
-namespace WebGobernacion\Infrastructure;
+namespace Notificaciones\Infrastructure;
 
 use Illuminate\Support\Collection; 
-use WebGobernacion\Domain\Empresa; 
-use WebGobernacion\Domain\Contrato; 
+use Notificaciones\Domain\Empresa;
+use Notificaciones\Domain\Contrato;
 
 /**
 * 

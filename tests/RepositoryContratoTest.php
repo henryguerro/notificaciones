@@ -1,6 +1,6 @@
 <?php 
-use \WebGobernacion\Infrastructure\ContratoRepository;
-use \WebGobernacion\Domain\Contrato;
+use \Notificaciones\Infrastructure\ContratoRepository;
+use \Notificaciones\Domain\Contrato;
 use \Illuminate\Support\Collection; 
 
 class RepositoryContratoTest extends PHPUnit_Framework_TestCase
@@ -29,7 +29,7 @@ class RepositoryContratoTest extends PHPUnit_Framework_TestCase
   {
     $contratos = new ContratoRepository();
 
-    $this->setExpectedException(\WebGobernacion\Domain\EntityNotFound::Class);
+    $this->setExpectedException(\Notificaciones\Domain\EntityNotFound::Class);
 
     $contratos->find(10000);
 

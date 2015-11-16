@@ -1,8 +1,8 @@
 <?php 
-namespace WebGobernacion\Infrastructure;
+namespace Notificaciones\Infrastructure;
 
 use Illuminate\Support\Collection; 
-use WebGobernacion\Domain\Responsabilidad; 
+use Notificaciones\Domain\Responsabilidad;
 /**
 * 
 */

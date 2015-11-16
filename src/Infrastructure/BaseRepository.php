@@ -1,7 +1,7 @@
 <?php 
-namespace WebGobernacion\Infrastructure;
+namespace Notificaciones\Infrastructure;
 
-use WebGobernacion\Domain\EntityNotFound; 
+use Notificaciones\Domain\EntityNotFound;
 
 
 abstract class BaseRepository

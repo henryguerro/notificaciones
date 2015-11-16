@@ -1,7 +1,7 @@
 <?php
-namespace WebGobernacion\Domain;
+namespace Notificaciones\Domain;
 
-use WebGobernacion\Infrastructure\ResponsabilidadRepository;
+use Notificaciones\Infrastructure\ResponsabilidadRepository;
 
 /**
 * Representa un patrón de Servicio encargado

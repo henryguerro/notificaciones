@@ -1,8 +1,8 @@
-<?php 
-namespace WebGobernacion\Http\Controllers;
+<?php
+namespace Notificaciones\Http\Controllers;
 
-use WebGobernacion\Domain\Notificador;
-use WebGobernacion\Http\Views\View;
+use Notificaciones\Domain\Notificador;
+use Notificaciones\Http\Views\View;
 
 class HomeController
 {

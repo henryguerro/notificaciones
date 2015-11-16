@@ -1,7 +1,7 @@
 <?php
-namespace WebGobernacion\Domain;
+namespace Notificaciones\Domain;
 
-use \WebGobernacion\Infrastructure\EmpresaRepository;
+use \Notificaciones\Infrastructure\EmpresaRepository;
 /**
 * 
 */
